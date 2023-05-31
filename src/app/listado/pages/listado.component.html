@@ -1,0 +1,120 @@
+<div class="row border-dark border align-bottom">
+  <p class="fs-7">Visualización de la trazavilidad de los RAEE</p>
+</div>
+<div class="row p-4">
+  <div class="col-2 p-4 ">
+    <div class="p-2">
+      <p>Por fecha:</p>
+      <div>
+        <shared-search-box
+        (onDebounce)="searchByFechas($event)"
+        placeholder="Buscar por fechas"></shared-search-box>
+      </div>
+    </div>
+    <div class="p-2">
+      <p>Por etiqueta:</p>
+      <div>
+        <shared-search-box
+        (onDebounce)="searchByEtiqueta($event)"
+        placeholder="Buscar por etiqueta"></shared-search-box>
+      </div>
+    </div>
+    <div class="p-2">
+      <p>Por region:</p>
+      <div>
+        <shared-search-box
+        (onDebounce)="searchByRegion($event)"
+        placeholder="Buscar por region"></shared-search-box>
+      </div>
+    </div>
+    <div class="p-2">
+      <p>Por Id:</p>
+      <div>
+        <shared-search-box
+        (onDebounce)="searchById($event)"
+        placeholder="Buscar por Id"></shared-search-box>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-9">
+    <table class="table table-hover table-responsive">
+        <tr>
+          <th class="text-center text-dark"></th>
+          <th class="text-center text-dark border border-dark pt-2 pb-2">Domicilio</th>
+          <th class="text-center text-dark border border-dark">Punto de Recogida</th>
+          <th class="text-center text-dark border border-dark">CAC</th>
+          <th class="text-center text-dark border border-dark">Planta de Tratamiento</th>
+
+        </tr>
+        <tr *ngFor="let electro of electros">
+
+          <td class="text-center border border-dark  pt-4 pb-4">{{ 'RAEE ' + electro.CargaDatosLecturasId }}</td>
+
+          <!-- <div *ngIf=" electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'">
+            <td class="text-center text-dark border border-dark ">
+              X
+            </td>
+            <td class="text-center text-dark border border-dark ">
+              X
+            </td>
+            <td class="text-center text-dark border border-dark ">
+              X
+            </td>
+            <td class="text-center text-dark border border-dark ">
+              X
+            </td>
+          </div> -->
+
+          <td class="text-center text-dark border border-dark ">
+            X
+          </td>
+
+          <td *ngIf=" electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'"
+            class="text-center border border-dark "
+          >
+            X
+          </td>
+
+          <td *ngIf="!( electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento' )"
+            class="text-center border border-dark "
+          >
+          </td>
+
+
+          <td *ngIf=" electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'"
+            class="text-center border border-dark "
+          >
+            X
+          </td>
+
+          <td *ngIf="!( electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento' )"
+            class="text-center border border-dark "
+          >
+
+          </td>
+
+          <td *ngIf=" electro.Donde === 'Planta de Tratamiento'"
+            class="text-center border border-dark "
+          >
+            X
+          </td>
+
+          <td *ngIf="!( electro.Donde === 'Planta de Tratamiento' )"
+            class="text-center border border-dark "
+          >
+          </td>
+
+        </tr>
+
+          <!-- <td>
+            {{ electro.Donde }}
+          </td>
+          <td>
+            {{ electro.Proveedor }}
+          </td>
+          <td>{{ electro.TipoRAEE }}</td>
+          <td>{{ electro.Marca }}</td> -->
+    </table>
+  </div>
+</div>
