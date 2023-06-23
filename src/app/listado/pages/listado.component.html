@@ -51,61 +51,61 @@
 
           <td class="text-center border border-dark  pt-4 pb-4">{{ 'RAEE ' + electro.CargaDatosLecturasId }}</td>
 
-          <!-- <div *ngIf=" electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'">
-            <td class="text-center text-dark border border-dark ">
-              X
-            </td>
-            <td class="text-center text-dark border border-dark ">
-              X
-            </td>
-            <td class="text-center text-dark border border-dark ">
-              X
-            </td>
-            <td class="text-center text-dark border border-dark ">
-              X
-            </td>
-          </div> -->
 
-          <td class="text-center text-dark border border-dark ">
+          <td class="text-center text-dark">
             X
           </td>
 
           <td *ngIf=" electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'"
-            class="text-center border border-dark "
+            class="text-center"
           >
             X
           </td>
 
           <td *ngIf="!( electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento' )"
-            class="text-center border border-dark "
+            class="text-center"
           >
           </td>
 
 
           <td *ngIf=" electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'"
-            class="text-center border border-dark "
+            class="text-center"
           >
-            X
-          </td>
+          X
+        </td>
 
           <td *ngIf="!( electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento' )"
-            class="text-center border border-dark "
+            class="text-center"
           >
 
           </td>
 
           <td *ngIf=" electro.Donde === 'Planta de Tratamiento'"
-            class="text-center border border-dark "
-          >
+            class="text-center"
+            >
             X
           </td>
 
           <td *ngIf="!( electro.Donde === 'Planta de Tratamiento' )"
-            class="text-center border border-dark "
+            class="text-center"
           >
           </td>
 
         </tr>
+        <!-- <div *ngIf=" electro.Donde === 'Punto de Recogida' || electro.Donde === 'CAC' || electro.Donde === 'Planta de Tratamiento'">
+          <td class="text-center text-dark border border-dark ">
+            X
+          </td>
+          <td class="text-center text-dark border border-dark ">
+            X
+          </td>
+          <td class="text-center text-dark border border-dark ">
+            X
+          </td>
+          <td class="text-center text-dark border border-dark ">
+            X
+          </td>
+        </div> -->
 
           <!-- <td>
             {{ electro.Donde }}
